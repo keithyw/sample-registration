@@ -15,4 +15,5 @@ Route::get('/', 'HomeController@index');
 Route::post('signup', 'RegistrationController@post');
 Route::get('login', 'LoginController@index');
 Route::post('login', 'LoginController@post');
+Route::get('logout', 'LogoutController@logout');
 Route::get('dashboard', 'DashboardController@index');

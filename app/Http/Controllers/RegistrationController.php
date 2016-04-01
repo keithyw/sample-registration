@@ -19,7 +19,7 @@ class RegistrationController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function post(Registration $request){
-        $user = $this->dispatch(new Register($request->input('email'), $request->input('password')));
+        $user = $this->dispatch(new Register($request->input('email'), $request->input('name'), $request->input('password')));
         return redirect($user ? '/dashboard' : '/');
     }
 }

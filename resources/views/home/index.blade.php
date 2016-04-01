@@ -21,6 +21,10 @@
                     <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{ old('email') }}"/>
                 </div>
                 <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="name" class="form-control" id="name" name="name" placeholder="Name" value="{{ old('name') }}"/>
+                </div>
+                <div class="form-group">
                     <label for="password">Password</label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="Password"/>
                 </div>

@@ -17,17 +17,24 @@ class Register extends Job implements SelfHandling
     /**
      * @var string
      */
+    private $_name;
+
+    /**
+     * @var string
+     */
     private $_password;
 
     /**
      * Register constructor.
      *
      * @param string $email
+     * @param string $name
      * @param string $password
      */
-    public function __construct($email, $password)
+    public function __construct($email, $name, $password)
     {
         $this->_email = $email;
+        $this->_name = $name;
         $this->_password = $password;
     }
 
@@ -38,7 +45,7 @@ class Register extends Job implements SelfHandling
      */
     public function handle()
     {
-        if ($user = User::create(['email' => $this->_email, 'name' => $this->_email, 'password' => bcrypt($this->_password)])){
+        if ($user = User::create(['email' => $this->_email, 'name' => $this->_name, 'password' => bcrypt($this->_password)])){
             Auth::login($user);
             return $user;
         }

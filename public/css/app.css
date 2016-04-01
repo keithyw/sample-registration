@@ -38,6 +38,6 @@ header {
     text-align: right;
 }
 
-.signup a {
+.signup a, .logout a {
     color: #2e6da4;
 }

@@ -11,8 +11,13 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Login as LoginRequest;
 use App\Jobs\Login;
 
+
 class LoginController extends Controller
 {
+    public function __construct(){
+        $this->middleware('guest');
+    }
+
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -34,4 +39,6 @@ class LoginController extends Controller
                 ->withErrors(['email' => 'Cannot find email/password']);
         }
     }
+
+
 }
