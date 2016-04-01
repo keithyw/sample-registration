@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
+Route::post('signup', 'RegistrationController@post');
+Route::get('login', 'LoginController@index');
+Route::post('login', 'LoginController@post');
+Route::get('dashboard', 'DashboardController@index');
